@@ -1,80 +1,62 @@
-// ------------- FILE HEADER -------------
-// Author ✅: 
-// Assignment ✅:
-// Date ✅:
-// Citations: 
-
-
-// ------------- ZYBOOKS SCORES -------------
-// Chapter ✅: 
-// Participation ✅: 
-// Challenge ✅:
-// Labs ✅:
-
-
-// ------------- DISCORD POSTS -------------
-// https://discord.com/invite/URYKKf8YHm
-// Count ✅:
-// Links (Optional): 
-
-
-// ------------- DESIGN DOCUMENT -------------
-// A. INPUT ✅: 
-// B. OUTPUT ✅:
-// C. CALCULATIONS ✅:
-// D. LOGIC and ALGORITHMS ✅:
-//    (Optional) flow chart link or file name: 
-
-
-// ------------- TESTING -------------
-// PASS ALL GIVEN SAMPLE RUN TESTS ✅: 
-// (Optional) Additional tests count:   
-
-
-// ------------- CODE -------------
+/******************************************************************************
+# Author:           Lucy Price & Andy Joy
+# Assignment:       Discussion 5 - Fun With Statistics
+# Date:             May 9, 2026
+# Description:      This program will take a number of integers from user
+#                   depending on how many numbers they choose to input. It will
+#                   then calculate and output the minimum, maximum, sum and 
+#                   average numbers.
+# Input:            userInput and numCount as integers.
+# Output:           average and sum as doubles, max and min as integers.
+# Sources:          Discussion 5 resources, and zybooks chapter 5.
+#******************************************************************************/
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
-// Function prototypes (if any)
-
-
 // Main function
-// https://en.cppreference.com/w/cpp/language/main_function.html
-int main(int argc, char* argv[]) {
-  cout << "Hello, World!" << endl;
-  return 0;
+int main() {
+
+//Declare variables
+double average = 0.0;
+double sum = 0.0;
+int userInput = 0;
+int max = 0;
+int min = 0;
+int numCount = 0;
+
+//welcome message & numCount input
+cout << "Hello! Welcome to the Fun With Statistics Program!" << endl;
+cout << "\nHow many numbers would you like to input?: ";
+cin >> numCount;
+cout << "Enter your numbers: ";
+
+//for loop length of numCount
+for(int i = 0; i < numCount; i++) {
+  sum = sum + userInput;
+  cin >> userInput;
+  
+  if (max < userInput) {  //updating max
+    max = userInput;
+  }
+  else if (min < userInput) {  //updating min
+    min = userInput;
+  }
 }
 
-// Function implementations (if any)
+//sum & average calculation
+sum = sum + userInput;
+average = sum / numCount;
+cout << fixed << setprecision(2);
 
+//output all the statistics
+cout << "\nThe sum of your numbers is: " << sum << endl;
+cout << "The average of your numbers is: " << average << endl;
+cout << "The smallest number you input was: " << min << endl;
+cout << "The largest number you input was: " << max << endl;
 
-// ------------- DESIGN -------------
-/* 
-Program Name:
+//goodbye message
+cout << "\nThank you for using the Fun With Statistics Program!" << endl;
 
-Program Description:
-
-Design:
-A. INPUT
-Define the input variables including name data type. 
-
-B. OUTPUT
-Define the output variables including data types. 
-
-C. CALCULATIONS
-Describe calculations used by algorithms in step D.  
-List all formulas. 
-If there are no calculations needed, state there are no calculations.
-
-D. LOGIC and ALGORITHMS
-Design the logic of your program using pseudocode or flowcharts. 
-Use conditionals, loops, functions or array constructs.
-List the steps in transforming inputs into outputs. 
-https://github.com/Glen-Sasek-PCC-Instructor/2025-06-22/blob/main/Pseudocode-Reference.txt
-
-
-SAMPLE RUNS
-Copy from assignment document.
-
-*/
+  return 0;
+}
