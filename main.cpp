@@ -7,7 +7,7 @@
 #                   then calculate and output the minimum, maximum, sum and 
 #                   average numbers.
 # Input:            userInput and numCount as integers.
-# Output:           average and sum as doubles, max and min as integers.
+# Output:           average as double, sum, max and min as integers.
 # Sources:          Discussion 5 resources, and zybooks chapter 5.
 #******************************************************************************/
 #include <iostream>
@@ -19,14 +19,14 @@ int main() {
 
 //Declare variables
 double average = 0.0;
-double sum = 0.0;
+int sum = 0.0;
 int userInput = 0;
 int max = 0;
 int min = 0;
 int numCount = 0;
 
 //welcome message & numCount input
-cout << "Hello! Welcome to the Fun With Statistics Program!" << endl;
+cout << "Welcome to the Fun With Statistics Program!" << endl;
 cout << "\nHow many numbers would you like to input?: ";
 cin >> numCount;
 cout << "Enter your numbers: ";
@@ -44,8 +44,7 @@ for(int i = 0; i < numCount; i++) {
   }
 }
 
-//sum & average calculation
-sum = sum + userInput;
+//average calculation
 average = sum / numCount;
 cout << fixed << setprecision(2);
 
